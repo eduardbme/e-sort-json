@@ -1,0 +1,20 @@
+{
+  application,
+  e_sort_json,
+  [
+    {description, "Sort JSON in Erlang"},
+    {vsn, "1.0.0"},
+    {id, "git"},
+    {modules, []},
+    {registered, []},
+    {applications, [
+      kernel,
+      stdlib,
+      eutils,
+      lager,
+      ermql
+    ]},
+    {mod, {e_sort_json_app, []}},
+    {env, []}
+  ]
+}.
