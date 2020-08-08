@@ -1,6 +1,7 @@
 # e-sort-json
 [![Build Status](https://travis-ci.org/eduardbme/e-sort-json.svg?branch=master)](https://travis-ci.org/eduardbme/e-sort-json)
 [![Coverage Status](https://coveralls.io/repos/github/eduardbme/e-sort-json/badge.svg?branch=master)](https://coveralls.io/github/eduardbme/e-sort-json?branch=master)
+
 Sort JSON object in Erlang
 
 #### Motivation
