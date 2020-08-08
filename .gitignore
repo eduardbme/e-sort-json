@@ -21,3 +21,4 @@ xrefr
 .rebar
 rebar3
 _build
+*.crashdump
