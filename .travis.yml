@@ -11,6 +11,6 @@ otp_release:
   - 18.0
 script:
   - rebar=./rebar3 make test
-  - ./rebar3 as test coveralls send
+  - DEBUG=1 ./rebar3 as test coveralls send
 notifications:
   webhooks: https://coveralls.io/webhook
