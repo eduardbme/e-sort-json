@@ -10,7 +10,7 @@ otp_release:
   - 19.0
   - 18.0
 script:
-  - ./rebar3 do eunit,edoc
+  - rebar=./rebar3 make test
   - ./rebar3 as test coveralls send
 notifications:
   webhooks: https://coveralls.io/webhook
