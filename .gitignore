@@ -19,3 +19,5 @@ logs/
 gs_receiver.d
 xrefr
 .rebar
+rebar3
+_build

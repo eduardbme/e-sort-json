@@ -1,5 +1,5 @@
 APP = e_sort_json
-REBAR = rebar
+REBAR ?= rebar
 DIALYZER = dialyzer
 
 DIALYZER_WARNINGS = -Wunmatched_returns -Werror_handling \
@@ -17,7 +17,7 @@ compile:
 	@$(REBAR) compile
 
 test: compile
-	@$(REBAR) ct skip_deps=true
+	@$(REBAR) eunit
 
 clean:
 	@$(REBAR) clean

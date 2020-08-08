@@ -17,6 +17,3 @@ Sort JSON object in Erlang
 [{<<"a">>,1},{<<"b">>,1}] 
 
 ```
-
-#### TODO
-- sort internal JSON objects
