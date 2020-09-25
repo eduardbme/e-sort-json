@@ -1,5 +1,13 @@
 APP = e_sort_json
 REBAR ?= rebar
+# verify rebar version
+# rebar2 does not have -v option, so the return value would be 1
+REBAR_VERSION := $(shell $(REBAR) -v 1>&2 2>/dev/null; echo $$?)
+ifeq ($(REBAR_VERSION),1)
+    REBAR_ = $(REBAR) --config rebar2.config
+else
+    REBAR_ = $(REBAR)
+endif
 DIALYZER = dialyzer
 
 DIALYZER_WARNINGS = -Wunmatched_returns -Werror_handling \
@@ -9,25 +17,23 @@ DIALYZER_WARNINGS = -Wunmatched_returns -Werror_handling \
 
 all: deps compile
 
-deps:
-	@$(REBAR) get-deps
-	@$(REBAR) compile
+deps: get-deps compile
 
 compile:
-	@$(REBAR) compile
+	@$(REBAR_) compile
 
 test: compile
-	@$(REBAR) eunit
+	@$(REBAR_) eunit
 
 clean:
-	@$(REBAR) clean
+	@$(REBAR_) clean
 
 run:
-	@$(REBAR) compile
+	$(REBAR_) compile
 	erl -pa ./ebin -eval "application:ensure_all_started($(APP))"
 
 get-deps:
-	@$(REBAR) get-deps
+	@$(REBAR_) get-deps
 
 .dialyzer_plt:
 	@$(DIALYZER) --build_plt --output_plt .dialyzer_plt \
