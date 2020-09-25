@@ -10,8 +10,8 @@ otp_release:
   - 19.0
   - 18.0
 script:
-  - REBAR=./rebar3 make deps
-  - REBAR=./rebar3 make test
+  - DEBUG=1 REBAR=./rebar3 make deps
+  - DEBUG=1 REBAR=./rebar3 make test
 after_success:
  - DEBUG=1 ./rebar3 as test coveralls send
 notifications:
